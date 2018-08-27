@@ -14,7 +14,7 @@ const Page500 = () => import('@/views/pages/Page500')
 const Login = () => import('@/views/pages/Login')
 const Register = () => import('@/views/pages/Register')
 
-// Vuews - Battle
+// Views - Battle
 const BattleSettings = () => import('@/views/battle/BattleSettings')
 const BattleSchedule = () => import('@/views/battle/BattleSchedule')
 const BattleAssets = () => import('@/views/battle/BattleAssets')
@@ -22,6 +22,10 @@ const BattleMembers = () => import('@/views/battle/BattleMembers')
 const BattleLoansList = () => import('@/views/battle/BattleLoansList')
 const BattleLoansNewest = () => import('@/views/battle/BattleLoansNewest')
 const BattleLoansFavorite = () => import('@/views/battle/BattleLoansFavorite')
+
+// Views - VK
+const Tasks = () => import('@/views/vk/Tasks')
+const AssignedTasks = () => import('@/views/vk/UserTasks')
 
 // Users
 const Users = () => import('@/views/users/Users')
@@ -103,6 +107,23 @@ export default new Router({
           path: 'profile',
           name: 'Профиль',
           component: Profile
+        },
+        {
+          path: 'vk',
+          name: 'Текущие задачи',
+          component: {
+            render (c) { return c('router-view') }
+          },
+          children: [
+            {
+              path: 'tickets',
+              component: Tasks
+            },
+            {
+              path: 'tasks',
+              component: AssignedTasks
+            }
+          ]
         }
       ]
     },

@@ -8,14 +8,11 @@
       <b-col sm="12" lg="12">
           <b-row>
             <b-col sm="12" lg="6">
-              <list-groups></list-groups>
+              <latest-tasks></latest-tasks>
             </b-col>
 
             <b-col lg="6" sm="12" class="mb-3">
-              <b-card>
-                  <h4 class="text-center">Мои задачи</h4>
-                  <p class="mt-5 text-center small">Не найдено</p>
-              </b-card>
+              <assigned-tasks></assigned-tasks>
             </b-col>
           </b-row>
       </b-col>
@@ -165,12 +162,14 @@ import MainChartExample from './dashboard/MainChartExample'
 import SocialBoxChartExample from './dashboard/SocialBoxChartExample'
 import CalloutChartExample from './dashboard/CalloutChartExample'
 import { Callout } from '@coreui/vue'
-import ListGroups from "./base/ListGroups";
+import LatestTasks from "./vk/LatestTasks";
+import AssignedTasks from "./vk/AssignedTasks";
 
 export default {
   name: 'dashboard',
   components: {
-    ListGroups,
+    AssignedTasks,
+    LatestTasks,
     Callout,
     CardLine1ChartExample,
     CardLine2ChartExample,
